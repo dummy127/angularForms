@@ -1,0 +1,67 @@
+
+
+
+<button class="btn btn-primary m-3" (click)="fillValue()">Fill the values</button>
+
+<form #form="ngForm" (ngSubmit)="onSubmit()" class="conatiner border p-2 m-4">
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <input
+      type="email"
+      class="form-control"
+      id="exampleInputEmail1"
+      aria-describedby="emailHelp"
+      name="email"
+      ngModel
+      required
+      email
+      #email="ngModel"
+    />
+    <div
+      id="emailHelp"
+      class="form-text"
+      *ngIf="email.control.invalid && email.control.dirty"
+    >
+      Your email address in invaild please write right email
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input
+      type="password"
+      class="form-control"
+      id="exampleInputPassword1"
+      name="password"
+      ngModel
+      required
+      minlength="8"
+      #password="ngModel"
+    />
+  </div>
+
+  <div *ngIf="password.control.invalid && password.control.dirty">
+    <div
+      id="emailHelp"
+      class="form-text"
+      *ngIf="password.control.hasError('required')"
+    >
+      Password is required
+    </div>
+
+    <div
+      id="emailHelp"
+      class="form-text"
+      *ngIf="password.control.hasError('minlength')"
+    >
+      Password is too short should be more then 8 characters
+    </div>
+  </div>
+  <div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <button type="submit" class="btn btn-primary" [disabled]="form.invalid">
+    
+    Submit
+  </button>
+</form>
