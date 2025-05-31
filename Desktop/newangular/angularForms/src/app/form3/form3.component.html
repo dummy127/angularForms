@@ -1,0 +1,46 @@
+
+<div class="container m-3">
+
+<form [formGroup]="reactiveForm" (ngSubmit)="onSubmit()">
+
+  <div class="mb-3 ">
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" formControlName="email">
+
+    <div *ngIf="reactiveForm.get('email')?.invalid && reactiveForm.get('email')?.dirty">
+        <div id="emailHelp" class="text-danger" *ngIf="reactiveForm.get('email')?.hasError('required')">Email address is required</div>
+        <div id="emailHelp" class="text-danger" *ngIf="reactiveForm.get('email')?.hasError('email')">Email address is invalid</div>
+    </div>
+    
+  </div>
+
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" name="password" formControlName="password">
+
+     <div *ngIf="reactiveForm.get('password')?.invalid && reactiveForm.get('password')?.dirty">
+        <div id="emailHelp" class="text-danger" *ngIf="reactiveForm.get('password')?.hasError('required')">Password is required</div>
+        <div id="emailHelp" class="text-danger" *ngIf="reactiveForm.get('password')?.hasError('minlength')">Password is to short</div>
+    </div>
+  </div>
+
+  
+
+  <div class="mb-3">
+    <label for="exampleInputPassword2" class="form-label">Age</label>
+    <input type="number" class="form-control" id="exampleInputPassword2" name="age" formControlName="age">
+
+        <div *ngIf="reactiveForm.get('age')?.invalid && reactiveForm.get('age')?.dirty">
+        <div id="emailHelp" class="text-danger" *ngIf="reactiveForm.get('age')?.hasError('required')">Age is required</div>
+        <div id="emailHelp" class="text-danger" *ngIf="reactiveForm.get('age')?.hasError('min')">Minor Detected</div>
+        <div id="emailHelp" class="text-danger" *ngIf="reactiveForm.get('age')?.hasError('max')">Age limit crossed</div>
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+
+
+
+
