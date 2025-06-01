@@ -1,0 +1,18 @@
+<div class="container m-2" [ngClass]="{'bg-danger': color ,'bg-success':!color}">
+
+<h3>{{counter()}}</h3>
+<button class="btn btn-primary" (click)="increase()">
+Increment
+</button>
+<hr>
+<button class="btn btn-primary" (click)="descrease()">
+Decrement
+</button>
+<hr>
+
+<input type="number" name="" id="" #length>
+<button class="btn btn-primary m-2" (click)="setL()">Set Length</button>
+<hr>
+<input type="number" name="" id="" #breadth>
+<button class="btn btn-primary m-2" (click)="setB()">Set Breadth</button>
+</div>

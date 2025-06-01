@@ -21,6 +21,7 @@
      <div *ngIf="reactiveForm.get('password')?.invalid && reactiveForm.get('password')?.dirty">
         <div id="emailHelp" class="text-danger" *ngIf="reactiveForm.get('password')?.hasError('required')">Password is required</div>
         <div id="emailHelp" class="text-danger" *ngIf="reactiveForm.get('password')?.hasError('minlength')">Password is to short</div>
+        <div id="emailHelp" class="text-danger" *ngIf="reactiveForm.get('password')?.hasError('commmonpassV')">Password is too common!</div>
     </div>
   </div>
 
