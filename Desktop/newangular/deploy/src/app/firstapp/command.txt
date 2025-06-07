@@ -1,0 +1,4 @@
+to deploy your angular project 
+npm install -g angular-cli-ghpages
+ng build --output-path=dist --base-href="your_repo_name"
+ngh --dir=dist/browser
