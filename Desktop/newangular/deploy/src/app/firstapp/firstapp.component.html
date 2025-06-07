@@ -1,0 +1,16 @@
+
+<div class="container">
+   <div class="row ">
+    <div class="col m-1" *ngFor="let a of prd">
+<div class="card" style="width: 18rem;">
+  <img src="{{a.image}}" class="card-img-top" alt="no img" width="300px" height="300px">
+  <div class="card-body">
+    <h5 class="card-title">{{a.id}}.{{a.title}}</h5>
+    <h6>${{a.price}}</h6>
+<p class="card-text">{{a.description}} {{a.category}}</p>
+    <a href="#" class="btn btn-primary">{{a.rating.rate}} | {{a.rating.count}}</a>
+  </div>
+</div>
+    </div>
+   </div>
+</div>
