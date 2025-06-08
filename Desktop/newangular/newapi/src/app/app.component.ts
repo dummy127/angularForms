@@ -1,15 +1,14 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { FirstappComponent } from './firstapp/firstapp.component';
-import { NewcompComponent } from "./newcomp/newcomp.component";
+import { ApiCompComponent } from "./api-comp/api-comp.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, FirstappComponent, NewcompComponent],
+  imports: [RouterOutlet, ApiCompComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'deploy';
+  title = 'newapi';
 }

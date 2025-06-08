@@ -1,0 +1,33 @@
+<div class="container">
+
+<h1>User data from API</h1>
+<table class="table">
+
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">email</th>
+      <th scope="col">username</th>
+      <th scope="col">password</th>
+      <th scope="col">firstname</th>
+      <th scope="col">lastname</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let a of uzar">
+      
+      <td>{{a.id}}</td>
+      <td>{{a.email}}</td>
+      <td>{{a.username}}</td>
+      <td>{{a.password}}</td>
+      <td>{{a.name.firstname}}</td>
+      <td>{{a.name.lastname}}</td>
+    </tr>
+  </tbody>
+</table>
+<h1>random joke</h1>
+<p>{{joks.id}}</p>
+<p>{{joks.punchline}}</p>
+<h3></h3>
+<p></p>
+</div>
